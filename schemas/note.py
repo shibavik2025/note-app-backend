@@ -21,7 +21,6 @@ class NoteResponse(NoteBase):
     title:str
     content:str
     category:NoteCategory
-    user_id: int
     created_at:datetime
 
     class Config:
@@ -34,5 +33,4 @@ class NoteUpdate(NoteBase):
     title:str
     content:str
     category:NoteCategory
-    user_id: int
     created_at:datetime

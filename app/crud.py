@@ -19,8 +19,7 @@ def create_note(note_data: NoteCreate, db: Session):
         new_note = Note(
             title=note_data.title,
             content=note_data.content,
-            category=category_enum,
-            user_id=1  # You can hardcode user ID for now or pass it from the request (if you want to link it to a user)
+            category=category_enum
         )
         
         # Add the new note to the session and commit
@@ -32,7 +31,6 @@ def create_note(note_data: NoteCreate, db: Session):
                             title=new_note.title, 
                             content=new_note.content,
                             category=new_note.category, 
-                            user_id=new_note.user_id,
                             created_at=new_note.created_at
                         )
 
