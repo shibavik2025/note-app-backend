@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8000
 
 # Run FastAPI with Gunicorn and UvicornWorker for handling async tasks
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "app.main:app", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "alembic upgrade head && gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app"]
