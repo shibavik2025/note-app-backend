@@ -7,7 +7,7 @@ import os
 Base = declarative_base()
 
 # Database URL
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://admin:admin@localhost:5432/notes_db")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Create an engine for connecting to the database
 engine = create_engine(DATABASE_URL)

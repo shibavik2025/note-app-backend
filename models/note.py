@@ -24,8 +24,4 @@ class Note(Base):
     title = Column(String, index=True)
     content = Column(String)
     category = Column(Enum(NoteCategory), nullable=False) 
-    created_at = Column(DateTime, default=datetime.utcnow)  
-
-    # Use string reference for relationship
-    user_id = Column(Integer, ForeignKey("users.id"))
-    owner = relationship("User", back_populates="notes")
+    created_at = Column(DateTime, default=datetime.utcnow)

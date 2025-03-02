@@ -8,6 +8,3 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
-
-    # Relationship: This links the User to multiple Notes
-    notes = relationship("Note", back_populates="owner")
