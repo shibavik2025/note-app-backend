@@ -1,3 +1,4 @@
-from  .product import router as  product_routes
+from .note import router as note_routes
+from .user import router as user_routes
 
-__all__ = ["product_routes"]
+__all__ = ["note_routes", "user_routes"]

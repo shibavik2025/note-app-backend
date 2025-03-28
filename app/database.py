@@ -1,29 +1,20 @@
-import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from dotenv import load_dotenv
-from contextlib import contextmanager
+import os
 
-# Load environment variables
-load_dotenv()
-
-# Define Base
+# Define Base for models to inherit from
 Base = declarative_base()
 
-# Get Database URL
+# Database URL
 DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise ValueError("DATABASE_URL is not set in the .env file!")
 
-# Create Engine
+# Create an engine for connecting to the database
 engine = create_engine(DATABASE_URL)
 
-# Session Factory
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine, expire_on_commit=False)
+# Create a session maker for interacting with the database
+SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 
-# Dependency for FastAPI routes
-@contextmanager
 def get_db():
     db = SessionLocal()
     try:
