@@ -1,2 +1,1 @@
-from .note import NoteCreate, NoteResponse, NoteBase
-
+from .product_input import ProductFeatures, ProductInput

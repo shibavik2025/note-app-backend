@@ -1,2 +1,2 @@
-from .note import Note
+from .product import Product
 

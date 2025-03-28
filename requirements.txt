@@ -5,4 +5,13 @@ psycopg2-binary==2.9.10
 SQLAlchemy==1.4.51
 uvicorn==0.34.0
 alembic==1.14.1
-gunicorn==21.2.0
+gunicorn
+Pillow
+torch
+transformers
+python-dotenv
+numpy
+python-multipart
+openai
+pytesseract
+torchvision
